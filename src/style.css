@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: #FFFBFB; /* Very light pink background */
+  color: #3D3D3D;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+#app {
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2C2C2C;
+  font-weight: 500; /* Minimalist prefers less heavy weights */
+  letter-spacing: -0.02em;
+}
+
+/* Minimalist Pink Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #F8D0D6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F2BAC3;
+}
+
+/* Inputs & Buttons */
+input, button, select {
+  font-family: inherit;
+}
+
+button {
+  padding: 10px 24px;
+  background: #F7B5C8; /* Elegant pink */
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px; /* Less rounded for minimalist feel */
+  font-weight: 400;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+button:hover:not(:disabled) {
+  background: #F2A2B7;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background: #FCE8EC;
+  color: #FFFFFF;
+  cursor: not-allowed;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #F1E5E7;
+  font-size: 14px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  color: #3D3D3D;
+}
+
+input:focus {
+  outline: none;
+  border-color: #F7B5C8;
+  box-shadow: 0 0 0 2px rgba(247, 181, 200, 0.1);
+}
+
+input::placeholder {
+  color: #CFC2C4;
+  font-weight: 300;
+}
+
+/* Cards & Containers */
+.card-container {
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #F9F1F3;
+  padding: 24px;
+}
