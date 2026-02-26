@@ -1,1 +1,0 @@
-\"fetch('https://restapi.amap.com/v3/place/text?key=e0b1d3d63bd18e8dfd3c509c3cc5b682&keywords=KFC&city=%E5%8C%97%E4%BA%AC&location=116.481488,39.990464&output=json').then(r=>r.json()).then(d=>{console.log(d.pois[0].distance)})\" ; node test_amap.js

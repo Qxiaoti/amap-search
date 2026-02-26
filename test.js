@@ -1,1 +1,0 @@
-const pcas=require('./pcas.json'); const hunan=pcas.find(p=>p.name==='ºşÄÏÊ¡'); console.log(hunan.children[0].name, hunan.children[0].children[0].name, hunan.children[0].children[0].children.slice(0, 3))  
