@@ -270,7 +270,7 @@ import { cityData, hotCities } from '../data/cities'
 import * as XLSX from 'xlsx'
 
 // ─── 城市选择 ───────────────────────────────────────────────
-const city = ref('')
+const city = ref('湖南')
 const showCitySelector = ref(false)
 const activeTab = ref('hot')
 const selectedProvince = ref('')
@@ -404,26 +404,29 @@ const PAGE_SIZE = 20
 function getCityAndTownParams() {
   let cityParam = ''
   let townParam = ''
-  if (city.value.trim()) {
-    if (selectedTown.value) {
-      cityParam = selectedDistrict.value || selectedCity.value
-      townParam = selectedTown.value
-    } else if (selectedDistrict.value) {
-      cityParam = selectedDistrict.value
-    } else if (selectedCity.value) {
-      cityParam = selectedCity.value
-    } else {
-      const parts = city.value.trim().split(/\s+/)
-      if (parts.length >= 3) {
-        cityParam = parts[1]
-        townParam = parts.slice(2).join(' ')
-      } else if (parts.length === 2) {
-        cityParam = parts[1]
+    if (city.value.trim()) {
+      if (selectedTown.value) {
+        cityParam = selectedDistrict.value || selectedCity.value
+        townParam = selectedTown.value
+      } else if (selectedDistrict.value) {
+        cityParam = selectedDistrict.value
+      } else if (selectedCity.value) {
+        cityParam = selectedCity.value
       } else {
-        cityParam = parts[0]
+        const parts = city.value.trim().split(/\s+/)
+        if (parts.length >= 3) {
+          cityParam = parts[1]
+          townParam = parts.slice(2).join(' ')
+        } else if (parts.length === 2) {
+          cityParam = parts[1]
+        } else {
+          cityParam = parts[0]
+        }
       }
+    } else {
+      // 默认限制在湖南地区
+      cityParam = '湖南'
     }
-  }
   return { cityParam, townParam }
 }
 

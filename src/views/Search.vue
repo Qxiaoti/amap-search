@@ -313,7 +313,7 @@ import * as XLSX from 'xlsx'
 
 const route = useRoute()
 const keyword = ref('')
-const city = ref('')
+const city = ref('湖南')
 const loading = ref(false)
 const loadingMore = ref(false)
 const loadingAll = ref(false)
@@ -524,13 +524,13 @@ const geocodeLocation = async () => {
   geocoding.value = true
   
   try {
-    // 如果选择了城市，在该城市内搜索
-    const cityParam = city.value ? city.value.split(/\s+/)[0] : ''
-    let url = `https://restapi.amap.com/v3/geocode/geo?key=${apiKey}&address=${encodeURIComponent(userLocation.value)}&output=json`
-    
-    if (cityParam) {
-      url += `&city=${encodeURIComponent(cityParam)}`
-    }
+      // 如果选择了城市，在该城市内搜索，否则默认湖南
+      const cityParam = city.value ? city.value.split(/\s+/)[0] : '湖南'
+      let url = `https://restapi.amap.com/v3/geocode/geo?key=${apiKey}&address=${encodeURIComponent(userLocation.value)}&output=json`
+      
+      if (cityParam) {
+        url += `&city=${encodeURIComponent(cityParam)}`
+      }
     
     const response = await fetch(url)
     const data = await response.json()
@@ -758,26 +758,29 @@ const searchPOI = async (isLoadMore = false) => {
           let cityParam = ''
           let townParam = ''
           
-          if (city.value.trim()) {
-            if (selectedTown.value) {
-              cityParam = selectedDistrict.value || selectedCity.value
-              townParam = selectedTown.value
-            } else if (selectedDistrict.value) {
-              cityParam = selectedDistrict.value
-            } else if (selectedCity.value) {
-              cityParam = selectedCity.value
-            } else {
-              const parts = city.value.trim().split(/\s+/)
-              if (parts.length >= 3) {
-                cityParam = parts[1]
-                townParam = parts.slice(2).join(' ')
-              } else if (parts.length === 2) {
-                cityParam = parts[1]
+            if (city.value.trim()) {
+              if (selectedTown.value) {
+                cityParam = selectedDistrict.value || selectedCity.value
+                townParam = selectedTown.value
+              } else if (selectedDistrict.value) {
+                cityParam = selectedDistrict.value
+              } else if (selectedCity.value) {
+                cityParam = selectedCity.value
               } else {
-                cityParam = parts[0]
+                const parts = city.value.trim().split(/\s+/)
+                if (parts.length >= 3) {
+                  cityParam = parts[1]
+                  townParam = parts.slice(2).join(' ')
+                } else if (parts.length === 2) {
+                  cityParam = parts[1]
+                } else {
+                  cityParam = parts[0]
+                }
               }
+            } else {
+              // 默认限制在湖南地区
+              cityParam = '湖南'
             }
-          }
           
           // 处理多关键词
           const kwList = keyword.value.split(/[,，]+/).map(k => k.trim()).filter(Boolean)
@@ -913,26 +916,29 @@ const loadMore = () => {
     try {
         let cityParam = ''
         let townParam = ''
-        if (city.value.trim()) {
-          if (selectedTown.value) {
-            cityParam = selectedDistrict.value || selectedCity.value
-            townParam = selectedTown.value
-          } else if (selectedDistrict.value) {
-            cityParam = selectedDistrict.value
-          } else if (selectedCity.value) {
-            cityParam = selectedCity.value
-          } else {
-            const parts = city.value.trim().split(/\s+/)
-            if (parts.length >= 3) {
-              cityParam = parts[1]
-              townParam = parts.slice(2).join(' ')
-            } else if (parts.length === 2) {
-              cityParam = parts[1]
+          if (city.value.trim()) {
+            if (selectedTown.value) {
+              cityParam = selectedDistrict.value || selectedCity.value
+              townParam = selectedTown.value
+            } else if (selectedDistrict.value) {
+              cityParam = selectedDistrict.value
+            } else if (selectedCity.value) {
+              cityParam = selectedCity.value
             } else {
-              cityParam = parts[0]
+              const parts = city.value.trim().split(/\s+/)
+              if (parts.length >= 3) {
+                cityParam = parts[1]
+                townParam = parts.slice(2).join(' ')
+              } else if (parts.length === 2) {
+                cityParam = parts[1]
+              } else {
+                cityParam = parts[0]
+              }
             }
+          } else {
+            // 默认限制在湖南地区
+            cityParam = '湖南'
           }
-        }
 
         const kwList = keyword.value.split(/[,，]+/).map(k => k.trim()).filter(Boolean)
         const kwActive = new Array(kwList.length).fill(true)
