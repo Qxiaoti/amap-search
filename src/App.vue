@@ -130,46 +130,58 @@ const menuOpen = ref(false)
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 768px) {
-  .nav-container {
-    height: 52px;
-    padding: 0 16px;
+  @media (max-width: 768px) {
+    .nav-container {
+      height: 56px;
+      padding: 0 16px;
+    }
+    .logo {
+      font-size: 18px;
+    }
+    .hamburger {
+      display: flex;
+    }
+    .nav-links {
+      display: flex;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      padding: 24px 20px;
+      gap: 12px;
+      z-index: 99;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: none;
+    }
+    .nav-links.open {
+      transform: translateX(0);
+    }
+    .nav-link {
+      font-size: 18px;
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: #f9f9f9;
+      text-align: center;
+      font-weight: 600;
+    }
+    .nav-link:hover {
+      background: #fdf2f8;
+      color: #f9a8d4;
+    }
+    .nav-link.router-link-active {
+      background: #fdf2f8;
+      color: #f9a8d4;
+    }
+    .nav-link.router-link-active::after {
+      display: none;
+    }
+    .main-content {
+      padding: 16px 0;
+    }
   }
-  .logo {
-    font-size: 17px;
-  }
-  .hamburger {
-    display: flex;
-  }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 52px;
-    left: 0;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    padding: 12px 16px 20px;
-    gap: 4px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    z-index: 99;
-  }
-  .nav-links.open {
-    display: flex;
-  }
-  .nav-link {
-    font-size: 15px;
-    padding: 12px 16px;
-    border-radius: 8px;
-  }
-  .nav-link:hover {
-    background: #fdf2f8;
-  }
-  .nav-link.router-link-active::after {
-    display: none;
-  }
-  .main-content {
-    padding: 12px;
-  }
-}
 </style>

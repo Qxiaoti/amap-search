@@ -2171,214 +2171,200 @@ button:disabled {
   font-size: 15px;
 }
 
-/* ── 响应式适配 ── */
-@media (max-width: 768px) {
-  .search-page {
-    padding: 0 12px;
-  }
+  /* ── 响应式适配 ── */
+  @media (max-width: 768px) {
+    .search-page {
+      padding: 0 16px;
+    }
 
-  .search-header h2 {
-    font-size: 22px;
-    margin-bottom: 16px;
-  }
+    .search-header {
+      margin-bottom: 20px;
+    }
 
-  .search-box {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+    .search-header h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
 
-  .search-box input,
-  .keyword-input {
-    width: 100%;
-    min-width: unset;
-    font-size: 15px;
-    padding: 13px 14px;
-  }
+    .search-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #f8f8f8;
+      padding: 16px;
+      border-radius: 16px;
+      margin-bottom: 12px;
+    }
 
-  .city-selector-wrapper {
-    width: 100%;
-  }
+    .keyword-input {
+      width: 100%;
+      font-size: 15px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
 
-  .city-btn {
-    flex: 1;
-    padding: 12px 16px;
-    font-size: 15px;
-  }
+    .city-selector-wrapper {
+      width: 100%;
+      display: flex;
+      gap: 8px;
+    }
 
-  .search-main-btn {
-    flex: 1;
-    padding: 13px 16px;
-    font-size: 15px;
-    min-width: unset;
-  }
+    .city-btn {
+      flex: 1;
+      padding: 12px 16px;
+      font-size: 15px;
+      border-radius: 10px;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-  button {
-    padding: 13px 18px;
-    font-size: 15px;
-  }
+    .clear-city-btn {
+      padding: 0 14px;
+    }
 
-  .cancel-btn {
-    padding: 13px 14px;
-    font-size: 14px;
-  }
+    .search-main-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 12px;
+      margin: 0;
+      font-weight: 600;
+    }
 
-  .location-box {
-    margin-top: 10px;
-  }
+    .location-box {
+      margin-top: 12px;
+    }
 
-  .location-input-wrapper {
-    padding: 10px 14px;
-    gap: 8px;
-  }
+    .location-input-wrapper {
+      padding: 12px;
+      border-radius: 12px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+    }
 
-  .location-input {
-    font-size: 14px;
-  }
+    .location-input {
+      font-size: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
 
-  /* 工具栏 */
-  .toolbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 14px;
-    margin-bottom: 14px;
-  }
+    .geocode-btn {
+      width: 100%;
+      padding: 10px;
+      margin: 0;
+      font-size: 14px;
+    }
 
-  .toolbar-right {
-    width: 100%;
-    flex-wrap: wrap;
-  }
+    /* 工具栏 */
+    .toolbar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      padding: 16px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
 
-  .sort-select,
-  .export-btn {
-    flex: 1;
-    min-width: 0;
-    text-align: center;
-    font-size: 13px;
-    padding: 8px 10px;
-  }
+    .results-count {
+      font-size: 14px;
+      text-align: center;
+    }
 
-  .results-count {
-    font-size: 15px;
-  }
+    .toolbar-right {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      width: 100%;
+    }
 
-  /* 结果卡片 */
-  .district-group {
-    padding: 14px;
-  }
+    .sort-select {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+      background: #f5f5f5;
+    }
 
-  .district-name {
-    font-size: 18px;
-  }
+    .export-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+      background: #f5f5f5;
+    }
 
-  .poi-item {
-    padding: 14px;
-  }
+    /* 结果列表 */
+    .results {
+      gap: 20px;
+    }
 
-  .poi-name {
-    font-size: 16px;
-  }
+    .district-group {
+      padding: 16px;
+      border-radius: 16px;
+    }
 
-  .poi-info {
-    font-size: 13px;
-  }
+    .district-name {
+      font-size: 20px;
+    }
 
-  .poi-phone {
-    font-size: 15px;
-  }
+    .poi-item {
+      padding: 16px;
+      border-radius: 12px;
+    }
 
-  .phone-number {
-    font-size: 14px;
-  }
+    .poi-name {
+      font-size: 18px;
+    }
 
-  .load-more-section {
-    flex-direction: column;
-    padding: 16px 0;
-    gap: 10px;
-  }
+    .poi-info {
+      font-size: 14px;
+    }
 
-  .load-more-btn {
-    width: 100%;
-    padding: 12px 20px;
-    font-size: 14px;
-  }
+    .phone-number {
+      font-size: 16px;
+    }
 
-  /* 城市弹窗手机适配 */
-  .city-modal {
-    padding: 0;
-    align-items: flex-end;
-  }
+    /* 城市弹窗 */
+    .city-modal {
+      padding: 0;
+      align-items: flex-end;
+    }
 
-  .city-modal-content {
-    max-width: 100%;
-    width: 100%;
-    max-height: 90vh;
-    border-radius: 16px 16px 0 0;
-  }
+    .city-modal-content {
+      height: 85vh;
+      border-radius: 24px 24px 0 0;
+    }
 
-  .city-modal-header {
-    padding: 16px 20px;
-  }
+    .province-selector {
+      flex-direction: column;
+      overflow-y: auto;
+    }
 
-  .city-modal-header h3 {
-    font-size: 18px;
-  }
+    .province-list,
+    .city-list,
+    .district-list,
+    .town-list {
+      flex: none;
+      width: 100%;
+      max-height: 25vh;
+      border-right: none;
+      border-bottom: 1px solid #f8f8f8;
+      padding: 12px;
+    }
 
-  .city-search-box {
-    padding: 12px 16px;
-  }
+    .province-item,
+    .city-item,
+    .district-item,
+    .town-item {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
 
-  .city-tabs {
-    padding: 10px 16px;
-    gap: 6px;
-    flex-wrap: wrap;
+    .city-actions {
+      padding: 16px;
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
   }
-
-  .city-tab {
-    padding: 8px 14px;
-    font-size: 14px;
-  }
-
-  .hot-cities {
-    padding: 16px;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .city-option {
-    padding: 10px 8px;
-    font-size: 13px;
-    text-align: center;
-  }
-
-  .province-tab-content {
-    height: 50vh;
-  }
-
-  .province-list,
-  .city-list,
-  .district-list,
-  .town-list {
-    padding: 8px;
-  }
-
-  .province-item,
-  .city-item,
-  .district-item,
-  .town-item {
-    font-size: 13px;
-    padding: 9px 10px;
-  }
-
-  .city-actions {
-    padding: 12px 16px;
-  }
-
-  .search-results {
-    padding: 12px 16px;
-  }
-
-  .search-result-item {
-    padding: 12px 14px;
-  }
-}
 </style>

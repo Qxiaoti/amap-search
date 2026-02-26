@@ -1335,245 +1335,186 @@ const exportMergedPhones = () => {
   transform: none;
 }
 
-/* ── 响应式适配 ── */
-@media (max-width: 768px) {
-  .multi-search-page {
-    padding: 0 10px 40px;
+  /* ── 响应式适配 ── */
+  @media (max-width: 768px) {
+    .multi-search-page {
+      padding: 0 16px 40px;
+    }
+
+    .page-header {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .page-header h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+    }
+
+    .search-panel {
+      padding: 16px;
+      border-radius: 16px;
+    }
+
+    .search-row {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .keyword-input {
+      min-width: unset;
+      width: 100%;
+      font-size: 15px;
+      padding: 14px;
+      border-radius: 12px;
+    }
+
+    .city-selector-wrapper {
+      width: 100%;
+    }
+
+    .city-btn {
+      flex: 1;
+      font-size: 15px;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    .search-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+
+    .cancel-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+    }
+
+    /* 操作栏 */
+    .action-bar {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 16px;
+      gap: 12px;
+      border-radius: 16px;
+    }
+
+    .action-left .total-info {
+      font-size: 14px;
+      text-align: center;
+      display: block;
+    }
+
+    .action-right {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .action-right button {
+      width: 100%;
+      font-size: 14px;
+      padding: 12px;
+      margin: 0;
+    }
+
+    /* 分列：竖向堆叠 */
+    .columns-view {
+      flex-direction: column;
+      overflow-x: visible;
+      gap: 20px;
+    }
+
+    .col-panel {
+      min-width: unset;
+      max-width: 100%;
+      border-radius: 16px;
+    }
+
+    .col-list {
+      max-height: 60vh;
+    }
+
+    /* 总表：卡片化 */
+    .merged-view {
+      border-radius: 16px;
+    }
+
+    .merged-header {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 16px;
+      gap: 12px;
+    }
+
+    .merged-header h3 {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .merge-filter {
+      width: 100%;
+      padding: 12px;
+    }
+
+    .merged-table {
+      display: none;
+    }
+
+    .merged-cards {
+      display: block;
+      padding: 12px;
+    }
+
+    /* 城市弹窗 */
+    .city-modal {
+      padding: 0;
+      align-items: flex-end;
+    }
+
+    .city-modal-content {
+      max-width: 100%;
+      width: 100%;
+      height: 85vh;
+      border-radius: 24px 24px 0 0;
+    }
+
+    .province-selector {
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .province-list,
+    .city-list,
+    .district-list,
+    .town-list {
+      flex: none;
+      width: 100%;
+      max-height: 25vh;
+      border-right: none;
+      border-bottom: 1px solid #f8f8f8;
+      padding: 12px;
+    }
+
+    .province-item,
+    .city-item,
+    .district-item,
+    .town-item {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+
+    .city-actions {
+      padding: 16px;
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
   }
-
-  .page-header h2 {
-    font-size: 20px;
-    margin-bottom: 6px;
-  }
-
-  .subtitle {
-    font-size: 13px;
-  }
-
-  .search-panel {
-    padding: 14px;
-  }
-
-  .search-row {
-    gap: 8px;
-  }
-
-  .keyword-input {
-    min-width: unset;
-    width: 100%;
-    font-size: 14px;
-    padding: 12px 14px;
-  }
-
-  .city-selector-wrapper {
-    width: 100%;
-  }
-
-  .city-btn {
-    flex: 1;
-    font-size: 14px;
-    padding: 12px 14px;
-  }
-
-  .search-btn {
-    width: 100%;
-    padding: 13px;
-    font-size: 15px;
-  }
-
-  .cancel-btn {
-    width: 100%;
-    padding: 11px;
-    font-size: 14px;
-    text-align: center;
-  }
-
-  /* 操作栏 */
-  .action-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px;
-    gap: 10px;
-  }
-
-  .action-right {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .action-right button {
-    flex: 1;
-    min-width: 0;
-    font-size: 13px;
-    padding: 9px 10px;
-    text-align: center;
-  }
-
-  /* 分列：竖向堆叠 */
-  .columns-view {
-    flex-direction: column;
-    overflow-x: visible;
-    gap: 12px;
-  }
-
-  .col-panel {
-    min-width: unset;
-    max-width: 100%;
-  }
-
-  .col-list {
-    max-height: 50vh;
-  }
-
-  /* 总表：卡片化 */
-  .merged-view {
-    overflow-x: hidden;
-  }
-
-  .merged-header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px;
-    gap: 10px;
-  }
-
-  .merge-filter {
-    width: 100%;
-    min-width: unset;
-  }
-
-  .merged-table {
-    display: none; /* 手机上隐藏大表格 */
-  }
-
-  /* 手机端卡片（桌面隐藏） */
-  .merged-cards {
-    display: none;
-  }
-}
-
-/* 卡片样式（全局，手机 media 内控制显示） */
-.merged-card {
-  padding: 14px;
-  background: #fafafa;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.mc-top {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 8px;
-}
-
-.mc-idx {
-  font-size: 12px;
-  color: #888;
-  min-width: 20px;
-}
-
-.mc-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: #333;
-  flex: 1;
-}
-
-.mc-row {
-  font-size: 13px;
-  color: #666;
-  margin-top: 5px;
-  word-break: break-all;
-}
-
-.mc-tel {
-  color: #f9a8d4;
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  /* 手机端显示卡片，隐藏表格 */
-  .merged-cards {
-    display: block;
-    padding: 10px 12px;
-  }
-  .merged-table {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .city-modal {
-    padding: 0;
-    align-items: flex-end;
-  }
-
-  .city-modal-content {
-    max-width: 100%;
-    width: 100%;
-    max-height: 90vh;
-    border-radius: 16px 16px 0 0;
-  }
-
-  .city-modal-header {
-    padding: 14px 16px;
-  }
-
-  .city-modal-header h3 {
-    font-size: 17px;
-  }
-
-  .city-search-box {
-    padding: 10px 16px;
-  }
-
-  .city-tabs {
-    padding: 8px 14px;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .city-tab {
-    padding: 7px 12px;
-    font-size: 13px;
-  }
-
-  .hot-cities {
-    padding: 14px;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-
-  .city-option {
-    padding: 9px 6px;
-    font-size: 13px;
-    text-align: center;
-  }
-
-  .province-tab-content {
-    height: 50vh;
-  }
-
-  .province-list,
-  .city-list,
-  .district-list,
-  .town-list {
-    padding: 6px;
-  }
-
-  .province-item,
-  .city-item,
-  .district-item,
-  .town-item {
-    font-size: 13px;
-    padding: 9px 10px;
-    min-width: unset;
-  }
-
-  .city-actions {
-    padding: 10px 14px;
-  }
-}
 </style>

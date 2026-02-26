@@ -384,4 +384,46 @@ const getColor = (index) => {
   font-size: 13px;
   color: #888888;
 }
+
+@media (max-width: 768px) {
+  .page-header {
+    margin-bottom: 20px;
+  }
+  .page-header h2 {
+    font-size: 24px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .stat-card {
+    padding: 16px;
+  }
+  .stat-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .stat-value {
+    font-size: 24px;
+  }
+  .stat-label {
+    font-size: 13px;
+  }
+  .chart-section {
+    padding: 16px;
+  }
+  .keyword-bar {
+    grid-template-columns: 80px 1fr 40px;
+    gap: 8px;
+  }
+  .keyword-name {
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .type-distribution {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

@@ -262,18 +262,88 @@ const goToSearch = () => {
   color: #888888;
   font-weight: 500;
 }
+  @media (max-width: 768px) {
+    .hero {
+      padding: 30px 16px;
+    }
+
+    .hero-title {
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 14px;
+      margin-bottom: 24px;
+      padding: 0 10px;
+    }
+    
+    .quick-search {
+      flex-direction: column;
+      gap: 12px;
+      padding: 0;
+      width: 100%;
+    }
+    
+    .hero-input {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+    
+    .hero-btn {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+    
+    .features {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .feature-card {
+      padding: 20px 12px;
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .feature-card h3 {
+      font-size: 14px;
+    }
+
+    .feature-card p {
+      font-size: 11px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 0 16px 40px;
+    }
+
+    .stat-item {
+      padding: 16px 10px;
+    }
+    
+    .stat-number {
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+    }
+  }
 </style>
-
-
-.feature-card {
-  cursor: pointer;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
